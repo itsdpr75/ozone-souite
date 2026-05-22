@@ -38,6 +38,10 @@
           <i class="bi bi-box nav-icon"></i>
           <span class="nav-label">Inventario</span>
         </button>
+        <button class="nav-btn" data-module="licencias">
+          <i class="bi bi-key nav-icon"></i>
+          <span class="nav-label">Licencias</span>
+        </button>
       </nav>
       <div class="sidebar-footer">
         <button id="theme-toggle" class="theme-btn" title="Cambiar tema">
@@ -194,6 +198,32 @@
           </table>
         </div>
       </section>
+
+      <!-- Licencias -->
+      <section id="module-licencias" class="module">
+        <header class="module-header">
+          <h2>Gestion de Licencias</h2>
+          <div class="module-actions">
+            <input type="text" id="licencia-search" placeholder="Buscar licencia..." class="search-input">
+            <select id="licencia-filter" class="filter-select">
+              <option value="all">Todos los estados</option>
+              <option value="activa">Activa</option>
+              <option value="por_vencer">Por Vencer</option>
+              <option value="expirada">Expirada</option>
+              <option value="trial">Trial</option>
+            </select>
+            <button id="btn-new-licencia" class="btn btn-primary"><i class="bi bi-plus"></i> Nueva Licencia</button>
+          </div>
+        </header>
+        <div class="module-body">
+          <table id="licencias-table" class="data-table">
+            <thead>
+              <tr><th>Nombre</th><th>Proveedor</th><th>Tipo</th><th>Expiracion</th><th>Restante</th><th>Coste</th><th>Estado</th><th>Acciones</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -238,13 +268,30 @@
 
   <script src="assets/js/chart.min.js"></script>
   <script src="utils/helpers.js"></script>
-  <script src="utils/storage.js"></script>
+  <script src="utils/storage/core.js"></script>
+  <script src="utils/storage/clientes.js"></script>
+  <script src="utils/storage/facturas.js"></script>
+  <script src="utils/storage/gastos.js"></script>
+  <script src="utils/storage/inventario.js"></script>
+  <script src="utils/storage/licencias.js"></script>
+  <script src="utils/storage/backups.js"></script>
+  <script src="utils/storage/logo.js"></script>
+  <script src="utils/storage/db.js"></script>
+  <script src="utils/storage/lock.js"></script>
   <script src="utils/pdfGenerator.js"></script>
+  <script src="modules/configuracion/tabs/init.js"></script>
+  <script src="modules/configuracion/tabs/general.js"></script>
+  <script src="modules/configuracion/tabs/interface.js"></script>
+  <script src="modules/configuracion/tabs/backups.js"></script>
+  <script src="modules/configuracion/tabs/security.js"></script>
   <script src="modules/configuracion.js"></script>
   <script src="modules/clientes.js"></script>
   <script src="modules/facturas.js"></script>
   <script src="modules/contabilidad.js"></script>
   <script src="modules/inventario.js"></script>
+  <script src="modules/licencias.js"></script>
+  <script src="renderer/app.js"></script>
+  <script src="renderer/dashboard.js"></script>
   <script src="renderer.js"></script>
 </body>
 </html>
