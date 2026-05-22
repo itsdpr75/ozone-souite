@@ -1,0 +1,49 @@
+/* Bootstrap Icons - Minimal set for OmniCapture Manager */
+@font-face {
+  font-family: 'bootstrap-icons';
+  src: url('../fonts/bootstrap-icons.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.bi {
+  display: inline-block;
+  font-family: 'bootstrap-icons';
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -0.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bi-grid::before { content: "\f3fe"; }
+.bi-people::before { content: "\f4cb"; }
+.bi-receipt::before { content: "\f4f5"; }
+.bi-graph-up::before { content: "\f359"; }
+.bi-box::before { content: "\f15e"; }
+.bi-moon::before { content: "\f495"; }
+.bi-sun::before { content: "\f5a9"; }
+.bi-eye::before { content: "\f2bf"; }
+.bi-pencil::before { content: "\f4c4"; }
+.bi-trash3::before { content: "\f5c1"; }
+.bi-x-circle::before { content: "\f622"; }
+.bi-file-earmark-arrow-down::before { content: "\f33e"; }
+.bi-x::before { content: "\f62a"; }
+.bi-box-arrow-right::before { content: "\f163"; }
+.bi-plus::before { content: "\f4d7"; }
+.bi-check-circle::before { content: "\f26f"; }
+.bi-info-circle::before { content: "\f431"; }
+.bi-exclamation-triangle::before { content: "\f61a"; }
+.bi-file-earmark::before { content: "\f33f"; }
+.bi-clock-history::before { content: "\f28c"; }
+.bi-download::before { content: "\f2c9"; }
+.bi-search::before { content: "\f52a"; }
+.bi-filter::before { content: "\f332"; }
+.bi-house::before { content: "\f425"; }
+.bi-cash::before { content: "\f23e"; }
+.bi-wallet2::before { content: "\f606"; }
+.bi-arrow-up-circle::before { content: "\f141"; }
+.bi-arrow-down-circle::before { content: "\f13a"; }
