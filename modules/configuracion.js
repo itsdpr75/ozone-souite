@@ -21,6 +21,7 @@ const ConfigModule = {
       <div class="config-tabs">
         <div class="config-tab-bar">
           <button class="config-tab active" data-tab="general"><i class="bi bi-gear"></i> General</button>
+          <button class="config-tab" data-tab="interface"><i class="bi bi-display"></i> Interfaz</button>
           <button class="config-tab" data-tab="backups"><i class="bi bi-hdd"></i> Copias de Seguridad</button>
           <button class="config-tab" data-tab="security"><i class="bi bi-shield-lock"></i> Seguridad</button>
         </div>
@@ -71,6 +72,24 @@ const ConfigModule = {
           <div class="form-actions">
             <button class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
             <button class="btn btn-primary" onclick="ConfigModule.saveGeneral()"><i class="bi bi-check-circle"></i> Guardar</button>
+          </div>
+        </div>
+
+        <!-- TAB: Interfaz -->
+        <div class="config-tab-content" id="tab-interface">
+          <div class="form-group">
+            <label>Escala de la Interfaz</label>
+            <div style="display:flex;align-items:center;gap:16px;margin-top:8px">
+              <input type="range" id="cfg-ui-scale" min="80" max="150" step="5" value="${this.config.ui_scale || 100}" style="flex:1">
+              <span id="cfg-ui-scale-value" style="font-weight:700;min-width:50px;text-align:center">${this.config.ui_scale || 100}%</span>
+            </div>
+            <label style="font-size:0.75rem;color:var(--text-muted);margin-top:8px;display:block">Ajusta el tamano de todos los elementos de la interfaz. Se aplica al instante.</label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-secondary" onclick="ConfigModule.resetUiScale()"><i class="bi bi-arrow-counterclockwise"></i> Restablecer</button>
+            <button class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+            <button class="btn btn-primary" onclick="ConfigModule.saveInterface()"><i class="bi bi-check-circle"></i> Guardar</button>
           </div>
         </div>
 
@@ -164,6 +183,15 @@ const ConfigModule = {
         document.getElementById(`tab-${tab.dataset.tab}`).classList.add('active');
       });
     });
+
+    const scaleSlider = document.getElementById('cfg-ui-scale');
+    const scaleValue = document.getElementById('cfg-ui-scale-value');
+    if (scaleSlider && scaleValue) {
+        scaleSlider.addEventListener('input', () => {
+        scaleValue.textContent = scaleSlider.value + '%';
+        document.body.style.zoom = scaleSlider.value + '%';
+      });
+    }
   },
 
   async loadLocationHistory() {
@@ -365,6 +393,23 @@ const ConfigModule = {
     closeModal();
   },
 
+  async saveInterface() {
+    const scale = document.getElementById('cfg-ui-scale').value;
+    await Storage.setConfig('ui_scale', scale);
+    showToast('Escala de interfaz guardada', 'success');
+    closeModal();
+  },
+
+  resetUiScale() {
+    const slider = document.getElementById('cfg-ui-scale');
+    const value = document.getElementById('cfg-ui-scale-value');
+    if (slider && value) {
+      slider.value = 100;
+      value.textContent = '100%';
+      document.body.style.zoom = '100%';
+    }
+  },
+
   showInfoPanel() {
     const html = `
       <div style="text-align:center;padding:20px">
@@ -374,7 +419,7 @@ const ConfigModule = {
         <div style="text-align:left;background:var(--input-bg);padding:20px;border-radius:12px;margin-bottom:20px">
           <p style="margin-bottom:12px"><strong>Version:</strong> 1.0.0</p>
           <p style="margin-bottom:12px"><strong>Tecnologia:</strong> Electron 37 + SQLite</p>
-          <p style="margin-bottom:12px"><strong>Motor de BD:</strong> better-sqlite3</p>
+          <p style="margin-bottom:12px"><strong>Motor de BD:</strong> SQLite (sql.js)</p>
           <p style="margin-bottom:12px"><strong>Almacenamiento:</strong> Local (SQLite)</p>
         </div>
 

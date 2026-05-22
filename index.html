@@ -58,32 +58,46 @@
       <section id="module-dashboard" class="module active">
         <header class="module-header">
           <h2>Panel de Control</h2>
-          <p class="module-desc">Resumen general</p>
+          <p class="module-desc">Resumen general de Ozone Souite</p>
         </header>
-        <div class="dashboard-grid">
-          <div class="stat-card">
-            <h3>Clientes Activos</h3>
-            <p class="stat-value" id="dash-clientes">0</p>
+
+        <!-- KPI Row -->
+        <div class="kpi-row" id="dash-kpi-row"></div>
+
+        <!-- Charts Row -->
+        <div class="charts-row">
+          <div class="chart-card">
+            <h3>Ingresos vs Gastos (6 meses)</h3>
+            <canvas id="chart-revenue"></canvas>
           </div>
-          <div class="stat-card">
-            <h3>Facturas Emitidas</h3>
-            <p class="stat-value" id="dash-facturas">0</p>
+          <div class="chart-card">
+            <h3>Facturas por Estado</h3>
+            <canvas id="chart-status"></canvas>
           </div>
-          <div class="stat-card">
-            <h3>Total Facturado</h3>
-            <p class="stat-value" id="dash-facturado">0,00 €</p>
+          <div class="chart-card">
+            <h3>Facturacion Mensual</h3>
+            <canvas id="chart-monthly"></canvas>
           </div>
-          <div class="stat-card">
-            <h3>Beneficio Neto</h3>
-            <p class="stat-value" id="dash-beneficio">0,00 €</p>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="bottom-row">
+          <!-- Alerts -->
+          <div class="dash-panel">
+            <h3><i class="bi bi-exclamation-triangle"></i> Alertas Pendientes</h3>
+            <div id="dash-alerts"></div>
           </div>
-          <div class="stat-card">
-            <h3>Activos 3D</h3>
-            <p class="stat-value" id="dash-activos">0</p>
+
+          <!-- Recent Activity -->
+          <div class="dash-panel">
+            <h3><i class="bi bi-clock-history"></i> Actividad Reciente</h3>
+            <div id="dash-recent"></div>
           </div>
-          <div class="stat-card">
-            <h3>Equipos Fisicos</h3>
-            <p class="stat-value" id="dash-equipos">0</p>
+
+          <!-- Quick Actions -->
+          <div class="dash-panel">
+            <h3><i class="bi bi-lightning"></i> Acciones Rapidas</h3>
+            <div id="dash-actions" class="quick-actions"></div>
           </div>
         </div>
       </section>
@@ -222,6 +236,7 @@
   <!-- PDF Print Area -->
   <div id="print-area" class="print-area"></div>
 
+  <script src="assets/js/chart.min.js"></script>
   <script src="utils/helpers.js"></script>
   <script src="utils/storage.js"></script>
   <script src="utils/pdfGenerator.js"></script>
