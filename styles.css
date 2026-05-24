@@ -193,6 +193,13 @@ body {
 .badge-reparacion { background: rgba(243, 156, 18, 0.2); color: var(--warning); }
 .badge-retirado { background: rgba(231, 76, 60, 0.2); color: var(--danger); }
 .badge-prestado { background: rgba(155, 89, 182, 0.2); color: #9b59b6; }
+.badge-activa { background: rgba(46, 204, 113, 0.2); color: var(--success); }
+.badge-por_vencer { background: rgba(243, 156, 18, 0.2); color: var(--warning); }
+.badge-expirada { background: rgba(231, 76, 60, 0.2); color: var(--danger); }
+.badge-trial { background: rgba(155, 89, 182, 0.2); color: #9b59b6; }
+.badge-subscription { background: rgba(74, 158, 255, 0.2); color: var(--accent); }
+.badge-perpetual { background: rgba(46, 204, 113, 0.2); color: var(--success); }
+.badge-opensource { background: rgba(150, 150, 150, 0.2); color: var(--text-secondary); }
 
 /* --- Dashboard --- */
 .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a9eff"/>
+      <stop offset="100%" stop-color="#3a8eef"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(74,158,255,0.15)"/>
+      <stop offset="100%" stop-color="rgba(74,158,255,0.05)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect x="32" y="32" width="448" height="448" rx="96" ry="96" fill="url(#bg)" stroke="#2a2a4a" stroke-width="2"/>
+
+  <!-- Inner glow circle -->
+  <circle cx="256" cy="256" r="180" fill="url(#glow)"/>
+
+  <!-- Outer ring -->
+  <circle cx="256" cy="256" r="160" fill="none" stroke="url(#accent)" stroke-width="3" opacity="0.3"/>
+
+  <!-- Orbital ring 1 -->
+  <ellipse cx="256" cy="256" rx="140" ry="50" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.2" transform="rotate(-30 256 256)"/>
+
+  <!-- Orbital ring 2 -->
+  <ellipse cx="256" cy="256" rx="140" ry="50" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.2" transform="rotate(30 256 256)"/>
+
+  <!-- O letter - outer -->
+  <circle cx="256" cy="256" r="90" fill="none" stroke="url(#accent)" stroke-width="14"/>
+
+  <!-- O letter - inner -->
+  <circle cx="256" cy="256" r="50" fill="none" stroke="url(#accent)" stroke-width="14"/>
+
+  <!-- S letter - top arc -->
+  <path d="M 256 166 A 50 50 0 0 1 306 216" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- S letter - middle diagonal -->
+  <path d="M 306 216 Q 206 226 206 256" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- S letter - bottom arc -->
+  <path d="M 206 256 A 50 50 0 0 0 256 346" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- Decorative dots -->
+  <circle cx="396" cy="116" r="6" fill="#4a9eff" opacity="0.4"/>
+  <circle cx="420" cy="148" r="4" fill="#4a9eff" opacity="0.3"/>
+  <circle cx="112" cy="380" r="5" fill="#4a9eff" opacity="0.35"/>
+  <circle cx="96" cy="356" r="3" fill="#4a9eff" opacity="0.25"/>
+
+  <!-- Small stars -->
+  <circle cx="140" cy="140" r="3" fill="#fff" opacity="0.3"/>
+  <circle cx="380" cy="360" r="3" fill="#fff" opacity="0.25"/>
+  <circle cx="160" cy="370" r="2" fill="#fff" opacity="0.2"/>
+  <circle cx="360" cy="145" r="2" fill="#fff" opacity="0.2"/>
+</svg>
