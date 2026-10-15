@@ -1,3 +1,6 @@
+# ATENCION, ESTE PROYECTO Y OMNICAPTURE SON PROYECTOS FICTICIOS CREADOS PARA UN TFG
+
+
 # OmniCapture Manager
 
 Sistema de gestion empresarial para **OmniCapture** - empresa especializada en fotogrametria y creacion de activos 3D.
